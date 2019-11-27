@@ -6,6 +6,6 @@ import lombok.Data;
 
 @Data
 public class CompraDto {
-	private List<ItemCompraDto> itens;
+	private List<ItemDoPedidoDto> itens;
 	private EnderecoDto endereco;
 }

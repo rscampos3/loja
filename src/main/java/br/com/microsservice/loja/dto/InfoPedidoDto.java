@@ -3,7 +3,10 @@ package br.com.microsservice.loja.dto;
 import lombok.Data;
 
 @Data
-public class ItemCompraDto {
+public class InfoPedidoDto {
+
 	private Long id;
-	private Integer quantidade;
+
+	private Integer tempoDePreparo;
+
 }
