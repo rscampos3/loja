@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.microsservice.loja.dto.CompraDto;
-import br.com.microsservice.loja.dto.InfoFornecedorDto;
+import br.com.microsservice.loja.model.Compra;
+import br.com.microsservice.loja.service.CompraService;
 import br.com.microsservice.loja.service.FornecedorService;
 
 @RestController
@@ -19,9 +20,11 @@ public class CompraController {
 	@Autowired
 	private FornecedorService fornecedorService;
 
+	@Autowired
+	private CompraService compraService;
+
 	@PostMapping
-	public ResponseEntity<InfoFornecedorDto> realizarCompra(@RequestBody CompraDto compra) {
-		return new ResponseEntity<InfoFornecedorDto>(
-				this.fornecedorService.getFornecedorPorEstado(compra.getEndereco().getEstado()), HttpStatus.OK);
+	public ResponseEntity<Compra> realizarCompra(@RequestBody CompraDto compra) {
+		return new ResponseEntity<Compra>(this.compraService.realizaCompra(compra), HttpStatus.OK);
 	}
 }

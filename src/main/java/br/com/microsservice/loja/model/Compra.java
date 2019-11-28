@@ -1,4 +1,4 @@
-package br.com.microsservice.loja;
+package br.com.microsservice.loja.model;
 
 import lombok.Data;
 
